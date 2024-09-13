@@ -1,14 +1,20 @@
 package com.jlzdev.supermarket.persistence.entity;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "compras_productos")
 public class ComprasProducto {
   @EmbeddedId
   private ComprasProductoPK id;
+
+  @ManyToOne
+  @JoinColumn(name = "id_compra", updatable = false, insertable = false)
+  private Compra compra;
+
+  @ManyToOne
+  @JoinColumn(name = "id_producto", updatable = false, insertable = false)
+  private Producto producto;
 
   private Integer cantidad;
   private double total;

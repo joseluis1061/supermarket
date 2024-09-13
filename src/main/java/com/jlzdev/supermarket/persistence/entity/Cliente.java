@@ -2,12 +2,17 @@ package com.jlzdev.supermarket.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "clientes")
 public class Cliente {
   @Id
-  @Column(length = 20, nullable = false)
+  @Column(name="id", length = 20, nullable = false)
   private String id;
+
+  @OneToMany(mappedBy = "cliente")
+  List<Compra> compras;
 
   @Column(length = 40)
   private String nombre;

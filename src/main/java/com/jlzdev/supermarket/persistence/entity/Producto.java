@@ -2,6 +2,8 @@ package com.jlzdev.supermarket.persistence.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name="productos")
 public class Producto {
@@ -11,6 +13,13 @@ public class Producto {
   @GeneratedValue(strategy = GenerationType.IDENTITY) // Id generado automaticamente autoincremental
   @Column(name = "id_producto")
   private Integer idProducto;
+
+  @ManyToOne
+  @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
+  private Categoria categoria;
+
+  @OneToMany(mappedBy = "producto")
+  private List<ComprasProducto> comprasProductos;
 
   @Column(name = "nombre")
   private String nombre;

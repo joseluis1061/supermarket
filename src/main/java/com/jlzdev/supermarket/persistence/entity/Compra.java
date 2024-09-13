@@ -3,6 +3,7 @@ package com.jlzdev.supermarket.persistence.entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "compras")
@@ -11,6 +12,13 @@ public class Compra {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id_compra")
   private Integer idCompra;
+
+  @ManyToOne
+  @JoinColumn(name = "id", insertable = false, updatable = false)
+  private Cliente cliente;
+
+  @OneToMany(mappedBy = "producto")
+  private List<ComprasProducto> productos;
 
   @Column(name = "id_cliente")
   private Integer idCliente;
