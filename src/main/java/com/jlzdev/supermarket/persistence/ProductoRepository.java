@@ -24,4 +24,9 @@ public class ProductoRepository {
     return productoCurdRepository.findByCantidadStockLessThanAndEstado(cantidad, true);
   }
 
+  //Producto por id
+  public Optional<Producto> getProductById(int id){
+    return productoCurdRepository.findById(id);
+  }
+
 }
