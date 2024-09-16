@@ -2,11 +2,13 @@ package com.jlzdev.supermarket.persistence;
 
 import com.jlzdev.supermarket.persistence.crud.ProductoCurdRepository;
 import com.jlzdev.supermarket.persistence.entity.Producto;
+import org.springframework.stereotype.Repository;
 
 import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class ProductoRepository {
   private ProductoCurdRepository productoCurdRepository;
 
@@ -27,6 +29,16 @@ public class ProductoRepository {
   //Producto por id
   public Optional<Producto> getProductById(int id){
     return productoCurdRepository.findById(id);
+  }
+
+  //Guardar producto
+  public Producto saveProduct(Producto producto){
+    return productoCurdRepository.save(producto);
+  }
+
+  //Eliminar producto por id
+  public void deleteProductById(int id){
+    productoCurdRepository.deleteById(id);
   }
 
 }
