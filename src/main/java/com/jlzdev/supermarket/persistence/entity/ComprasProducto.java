@@ -28,6 +28,14 @@ public class ComprasProducto {
     this.cantidad = cantidad;
   }
 
+  public Compra getCompra() {
+    return compra;
+  }
+
+  public void setCompra(Compra compra) {
+    this.compra = compra;
+  }
+
   public Boolean getEstado() {
     return estado;
   }
@@ -44,6 +52,14 @@ public class ComprasProducto {
     this.id = id;
   }
 
+  public Producto getProducto() {
+    return producto;
+  }
+
+  public void setProducto(Producto producto) {
+    this.producto = producto;
+  }
+
   public double getTotal() {
     return total;
   }
@@ -57,6 +73,8 @@ public class ComprasProducto {
     return "ComprasProducto{" +
         "cantidad=" + cantidad +
         ", id=" + id +
+        ", compra=" + compra +
+        ", producto=" + producto +
         ", total=" + total +
         ", estado=" + estado +
         '}';

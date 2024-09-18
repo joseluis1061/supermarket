@@ -2,10 +2,7 @@ package com.jlzdev.supermarket.persistence.mapper;
 
 import com.jlzdev.supermarket.domain.Category;
 import com.jlzdev.supermarket.persistence.entity.Categoria;
-import org.mapstruct.InheritConfiguration;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
+import org.mapstruct.*;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
@@ -19,7 +16,7 @@ public interface CategoryMapper {
   Category toCategory(Categoria categoria);
 
   // De Category a Categoria
-  @InheritConfiguration
+  @InheritInverseConfiguration
   @Mapping(target = "productos", ignore = true)
   Categoria toCategoria(Category category);
 }

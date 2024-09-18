@@ -18,8 +18,8 @@ public class Producto {
   @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
   private Categoria categoria;
 
-  @OneToMany(mappedBy = "producto")
-  private List<ComprasProducto> comprasProductos;
+//  @OneToMany(mappedBy = "producto")
+//  private List<ComprasProducto> comprasProductos;
 
   @Column(name = "nombre")
   private String nombre;
@@ -47,6 +47,14 @@ public class Producto {
     this.cantidadStock = cantidadStock;
   }
 
+  public Categoria getCategoria() {
+    return categoria;
+  }
+
+  public void setCategoria(Categoria categoria) {
+    this.categoria = categoria;
+  }
+
   public String getCodigoBarras() {
     return codigoBarras;
   }
@@ -54,6 +62,14 @@ public class Producto {
   public void setCodigoBarras(String codigoBarras) {
     this.codigoBarras = codigoBarras;
   }
+
+//  public List<ComprasProducto> getComprasProductos() {
+//    return comprasProductos;
+//  }
+//
+//  public void setComprasProductos(List<ComprasProducto> comprasProductos) {
+//    this.comprasProductos = comprasProductos;
+//  }
 
   public Boolean getEstado() {
     return estado;
@@ -100,6 +116,8 @@ public class Producto {
     return "Producto{" +
         "cantidadStock=" + cantidadStock +
         ", idProducto=" + idProducto +
+        ", categoria=" + categoria +
+//        ", comprasProductos=" + comprasProductos +
         ", nombre='" + nombre + '\'' +
         ", idCategoria=" + idCategoria +
         ", codigoBarras='" + codigoBarras + '\'' +

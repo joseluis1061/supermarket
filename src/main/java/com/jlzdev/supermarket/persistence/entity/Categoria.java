@@ -12,7 +12,7 @@ public class Categoria {
   private int idCategoria;
 
   @OneToMany(mappedBy = "categoria")
-  List<Producto> productos;
+  private List<Producto> productos;
 
   @Column(length = 45, nullable = false)
   private String descripcion;
@@ -44,11 +44,20 @@ public class Categoria {
     this.idCategoria = idCategoria;
   }
 
+  public List<Producto> getProductos() {
+    return productos;
+  }
+
+  public void setProductos(List<Producto> productos) {
+    this.productos = productos;
+  }
+
   @Override
   public String toString() {
     return "Categoria{" +
         "descripcion='" + descripcion + '\'' +
         ", idCategoria=" + idCategoria +
+        ", productos=" + productos +
         ", estado=" + estado +
         '}';
   }

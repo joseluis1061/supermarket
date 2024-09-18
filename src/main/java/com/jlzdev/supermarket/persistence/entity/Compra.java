@@ -32,6 +32,14 @@ public class Compra {
 
   private String estado;
 
+  public Cliente getCliente() {
+    return cliente;
+  }
+
+  public void setCliente(Cliente cliente) {
+    this.cliente = cliente;
+  }
+
   public String getComentario() {
     return comentario;
   }
@@ -80,14 +88,24 @@ public class Compra {
     this.medioPago = medioPago;
   }
 
+  public List<ComprasProducto> getProductos() {
+    return productos;
+  }
+
+  public void setProductos(List<ComprasProducto> productos) {
+    this.productos = productos;
+  }
+
   @Override
   public String toString() {
     return "Compra{" +
-        "comentario='" + comentario + '\'' +
+        "cliente=" + cliente +
         ", idCompra=" + idCompra +
+        ", productos=" + productos +
         ", idCliente=" + idCliente +
         ", fecha=" + fecha +
         ", medioPago='" + medioPago + '\'' +
+        ", comentario='" + comentario + '\'' +
         ", estado='" + estado + '\'' +
         '}';
   }
