@@ -13,6 +13,18 @@ public class Compra {
   @Column(name = "id_compra")
   private Integer idCompra;
 
+  @Column(name="medio_pago")
+  private String medioPago;
+
+  private String comentario;
+
+  private String estado;
+
+  @Column(name = "id_cliente")
+  private Integer idCliente;
+
+  private LocalDateTime fecha;
+
   @ManyToOne
   @JoinColumn(name = "id", insertable = false, updatable = false)
   private Cliente cliente;
@@ -20,18 +32,6 @@ public class Compra {
 //  @OneToMany(mappedBy = "producto")
   @OneToMany(mappedBy = "compra")
   private List<ComprasProducto> productos;
-
-  @Column(name = "id_cliente")
-  private Integer idCliente;
-
-  private LocalDateTime fecha;
-
-  @Column(name="medio_pago")
-  private String medioPago;
-
-  private String comentario;
-
-  private String estado;
 
   public Cliente getCliente() {
     return cliente;

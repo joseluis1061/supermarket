@@ -8,6 +8,10 @@ public class ComprasProducto {
   @EmbeddedId
   private ComprasProductoPK id;
 
+  private Integer cantidad;
+  private Double total;
+  private Boolean estado;
+
   @ManyToOne
   @JoinColumn(name = "id_compra", updatable = false, insertable = false)
   private Compra compra;
@@ -15,10 +19,6 @@ public class ComprasProducto {
   @ManyToOne
   @JoinColumn(name = "id_producto", updatable = false, insertable = false)
   private Producto producto;
-
-  private Integer cantidad;
-  private double total;
-  private Boolean estado;
 
   public Integer getCantidad() {
     return cantidad;
@@ -66,17 +66,5 @@ public class ComprasProducto {
 
   public void setTotal(double total) {
     this.total = total;
-  }
-
-  @Override
-  public String toString() {
-    return "ComprasProducto{" +
-        "cantidad=" + cantidad +
-        ", id=" + id +
-        ", compra=" + compra +
-        ", producto=" + producto +
-        ", total=" + total +
-        ", estado=" + estado +
-        '}';
   }
 }
