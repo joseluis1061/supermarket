@@ -1,7 +1,6 @@
 package com.jlzdev.supermarket.persistence.crud;
 
 import com.jlzdev.supermarket.persistence.entity.Compra;
-import com.jlzdev.supermarket.persistence.entity.Producto;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

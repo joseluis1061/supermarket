@@ -76,16 +76,4 @@ public class Cliente {
   public void setNombre(String nombre) {
     this.nombre = nombre;
   }
-
-  @Override
-  public String toString() {
-    return "Cliente{" +
-        "apellidos='" + apellidos + '\'' +
-        ", id='" + id + '\'' +
-        ", nombre='" + nombre + '\'' +
-        ", celular=" + celular +
-        ", direccion='" + direccion + '\'' +
-        ", correoElectronico='" + correoElectronico + '\'' +
-        '}';
-  }
 }

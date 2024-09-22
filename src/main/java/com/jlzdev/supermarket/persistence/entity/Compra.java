@@ -26,7 +26,7 @@ public class Compra {
   private LocalDateTime fecha;
 
   @ManyToOne
-  @JoinColumn(name = "id", insertable = false, updatable = false)
+  @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
   private Cliente cliente;
 
   @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
