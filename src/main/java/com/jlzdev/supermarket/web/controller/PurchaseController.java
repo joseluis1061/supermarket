@@ -1,6 +1,5 @@
 package com.jlzdev.supermarket.web.controller;
 
-import com.jlzdev.supermarket.domain.Product;
 import com.jlzdev.supermarket.domain.Purchase;
 import com.jlzdev.supermarket.domain.service.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +31,4 @@ public class PurchaseController {
   public ResponseEntity<Purchase>  save(@RequestBody Purchase product){
     return new ResponseEntity<>(purchaseService.save(product), HttpStatus.CREATED);
   }
-
-
 }
